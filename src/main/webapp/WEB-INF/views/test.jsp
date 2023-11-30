@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Hi <br>안녕하세요</h2>
+<h2>Hi~ <br>안녕하세요</h2>
 <img src="resources/images/img.png" alt="Image">
 </body>
 </html>
