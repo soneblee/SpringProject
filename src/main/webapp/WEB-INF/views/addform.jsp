@@ -15,7 +15,7 @@
 <%@ page import="com.example.BoardServiceImpl" %>
 <%@ page import="static com.example.BoardServiceImpl.*" %>
 
-<jsp:useBean id="u" class="com.example.BoardVO" />
+<jsp:useBean id="u" class="com.example.BoardVO" scope="request"/>
 <jsp:setProperty property="*" name="u"/>
 
 <%
@@ -31,15 +31,29 @@
     <title>Insert title here</title>
 </head>
 <body>
+<form:form modelAttribute="u" method="POST" action="../addok">
 <h1>Add New Post</h1>
-<form>
     <table>
-        <tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
-        <tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
-        <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
-        <tr><td><a href="posts.jsp">View All Records</a></td><td align="right"><input type="submit" value="Add Post"/></td></tr>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" name="title" value="${u.title}"/></td>
+        </tr>
+        <tr>
+            <td>Writer:</td>
+            <td><input type="text" name="writer" value="${u.writer}" /></td>
+        </tr>
+        <tr>
+            <td>Content:</td>
+            <td><textarea cols="50" rows="5" name="content">${u.content}</textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Add Post"/>
+                <input type="button" value="Cancel" onclick="history.back()"/>
+            </td>
+        </tr>
     </table>
-</form>
+</form:form>
 
 </body>
 

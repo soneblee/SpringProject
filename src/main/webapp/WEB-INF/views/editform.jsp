@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.example.BoardVO, com.example.BoardService, com.example.BoardDAO"%>
-<%@ page import="com.example.BoardServiceImpl" %>
+<%@ page import="com.example.BoardVO, com.example.BoardService"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<%@ page isELIgnored="false" %>
-
-<jsp:useBean id="u" class="com.example.BoardVO" />
+<jsp:useBean id="u" class="com.example.BoardVO" scope="request"/>
 <jsp:setProperty property="*" name="u"/>
-<%
-	BoardDAO boardDAO = new BoardDAO();
-	int i=boardDAO.updateBoard(u);
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +12,8 @@
 	<title>Edit Form</title>
 </head>
 <body>
-<form action="../editok">
+<%--@elvariable id="u" type=""--%>
+<form:form modelAttribute="u" method="POST" action="../editok">
 	<h1>Edit Form</h1>
 	<input type="hidden" name="seq" value="${u.seq}"/>
 	<table>
@@ -41,6 +36,6 @@
 			</td>
 		</tr>
 	</table>
-</form>
+</form:form>
 </body>
 </html>
