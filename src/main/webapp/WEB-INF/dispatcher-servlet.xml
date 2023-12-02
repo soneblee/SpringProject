@@ -11,5 +11,8 @@
         <property name="suffix" value=".jsp" />
     </bean>
     <mvc:resources mapping="/resources/images/**" location="/resources/images/"/>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ds" />
+    </bean>
 </beans>
 

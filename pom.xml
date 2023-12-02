@@ -1,27 +1,49 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>SpringProject</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>SpringProject Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+<a:project xmlns:a="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <a:modelVersion>4.0.0</a:modelVersion>
+  <a:groupId>org.example</a:groupId>
+  <a:artifactId>SpringProject</a:artifactId>
+  <a:packaging>war</a:packaging>
+  <a:version>1.0-SNAPSHOT</a:version>
+  <a:name>SpringProject Maven Webapp</a:name>
+  <a:url>http://maven.apache.org</a:url>
+
+  <a:dependencies>
+    <a:dependency>
+      <a:groupId>junit</a:groupId>
+      <a:artifactId>junit</a:artifactId>
+      <a:version>3.8.1</a:version>
+      <a:scope>test</a:scope>
+    </a:dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>5.3.23</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>SpringProject</finalName>
-  </build>
-</project>
+    <a:dependency>
+      <a:groupId>org.springframework</a:groupId>
+      <a:artifactId>spring-webmvc</a:artifactId>
+      <a:version>5.3.23</a:version>
+    </a:dependency>
+    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+    <a:dependency>
+      <a:groupId>jstl</a:groupId>
+      <a:artifactId>jstl</a:artifactId>
+      <a:version>1.2</a:version>
+    </a:dependency>
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <a:dependency>
+      <a:groupId>com.mysql</a:groupId>
+      <a:artifactId>mysql-connector-j</a:artifactId>
+      <a:version>8.0.33</a:version>
+    </a:dependency>
+    <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+    <a:dependency>
+      <a:groupId>org.mariadb.jdbc</a:groupId>
+      <a:artifactId>mariadb-java-client</a:artifactId>
+      <a:version>3.1.4</a:version>
+    </a:dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <a:dependency>
+      <a:groupId>org.springframework</a:groupId>
+      <a:artifactId>spring-jdbc</a:artifactId>
+      <a:version>5.3.23</a:version>
+    </a:dependency>
+  </a:dependencies>
+</a:project>
