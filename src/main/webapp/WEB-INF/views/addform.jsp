@@ -24,8 +24,27 @@
     String msg = "데이터 추가 성공 !";
     if(i == 0) msg = "[에러] 데이터 추가 ";
 %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<h1>Add New Post</h1>
+<form>
+    <table>
+        <tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
+        <tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
+        <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
+        <tr><td><a href="posts.jsp">View All Records</a></td><td align="right"><input type="submit" value="Add Post"/></td></tr>
+    </table>
+</form>
+
+</body>
 
 <script>
     alert('<%=msg%>');
     location.href='posts.jsp';
 </script>
+</html>
