@@ -11,9 +11,10 @@ import java.util.List;
 @Controller
 public class BoardController {
     @Autowired
-    BoardServiceImpl boardServiceImpl;
+    private BoardServiceImpl boardServiceImpl;
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public String boardList(Model model){
+        model.addAttribute("boardServiceImpl", boardServiceImpl);
         model.addAttribute("list", boardServiceImpl.getBoardList());
         return "posts";
     }
@@ -49,6 +50,6 @@ public class BoardController {
             System.out.println("데이터 삭제 실패");
         else
             System.out.println("데이터 삭제 성공!!!");
-        return "redirect:/board/list";
+        return "redirect:/board/posts";
     }
 }
