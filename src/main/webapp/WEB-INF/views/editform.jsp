@@ -1,34 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.example.BoardVO, com.example.BoardService"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
-<jsp:useBean id="u" class="com.example.BoardVO" scope="request"/>
-<jsp:setProperty property="*" name="u"/>
-
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title>Edit Form</title>
 </head>
 <body>
-<%--@elvariable id="u" type=""--%>
-<form:form modelAttribute="u" method="POST" action="../editok">
-	<h1>Edit Form</h1>
+<h1>Edit Form</h1>
+<form action="../editok" method="post">
 	<input type="hidden" name="seq" value="${u.seq}"/>
 	<table>
-		<tr>
-			<td>Title:</td>
-			<td><input type="text" name="title" value="${u.title}"/></td>
-		</tr>
-		<tr>
-			<td>Writer:</td>
-			<td><input type="text" name="writer" value="${u.writer}" /></td>
-		</tr>
-		<tr>
-			<td>Content:</td>
-			<td><textarea cols="50" rows="5" name="content">${u.content}</textarea></td>
-		</tr>
+		<tr><td>Title:</td><td><input type="text" name="title" value="${u.title}"/></td></tr>
+		<tr><td>Writer:</td><td><input type="text" name="writer" value="${u.writer}" /></td></tr>
+		<tr><td>Content:</td><td><textarea cols="50" rows="5" name="content">${u.content}</textarea></td></tr>
+		<tr><td>Category:</td><td><input type="text" name="category" value="${u.category}"/></td></tr>
 		<tr>
 			<td colspan="2">
 				<input type="submit" value="Edit Post"/>
@@ -36,6 +19,6 @@
 			</td>
 		</tr>
 	</table>
-</form:form>
+</form>
 </body>
 </html>

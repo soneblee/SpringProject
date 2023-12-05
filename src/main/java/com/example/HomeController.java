@@ -8,6 +8,6 @@ public class HomeController {
     @RequestMapping("/")
     public String home(){
         System.out.println("실행중!");
-        return "posts";
+        return "home";
     }
 }

@@ -14,22 +14,6 @@ public class BoardDAO {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-//	public List<BoardVO> getBoardList() {
-//		String sql = "select * from BOARD order by seq desc";
-//		List<BoardVO> list = jdbcTemplate.query(sql, new RowMapper<BoardVO>() {
-//			@Override
-//			public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
-//				BoardVO one = new BoardVO();
-//				one.setSeq(rs.getInt("seq"));
-//				one.setTitle(rs.getString("title"));
-//				one.setWriter(rs.getString("writer"));
-//				one.setContent(rs.getString("content"));
-//				return one;
-//			}
-//		});
-//		return list;
-//	}
-
 	public int insertBoard(BoardVO vo){
 		String sql = "insert into BOARD(title, writer, content) values ("
 				+ "'" + vo.getTitle() + "',"

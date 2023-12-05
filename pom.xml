@@ -38,10 +38,8 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-
-
   </dependencies>
   <build>
-    <finalName>TeamProject</finalName>
+    <finalName>SpringProject</finalName>
   </build>
 </project>

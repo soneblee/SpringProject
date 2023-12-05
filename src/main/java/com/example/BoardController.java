@@ -11,14 +11,13 @@ import java.util.List;
 @Controller
 public class BoardController {
     @Autowired
-    private BoardServiceImpl boardServiceImpl;
-    @RequestMapping(value = "/posts", method = RequestMethod.GET)
+    BoardServiceImpl boardServiceImpl;
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardList(Model model){
-        model.addAttribute("boardServiceImpl", boardServiceImpl);
         model.addAttribute("list", boardServiceImpl.getBoardList());
-        return "posts";
+        return "list";
     }
-    @RequestMapping(value = "/addform", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost(){
         return "addform";
     }
@@ -28,7 +27,7 @@ public class BoardController {
             System.out.println("데이터 추가 실패");
         else
             System.out.println("데이터 추가 성공!!!");
-        return "redirect:posts";
+        return "redirect:list";
     }
     @RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
     public String editPost(@PathVariable("id")int id, Model model){
@@ -42,7 +41,7 @@ public class BoardController {
             System.out.println("데이터 수정 실패");
         else
             System.out.println("데이터 수정 성공!!!");
-        return "redirect:posts";
+        return "redirect:list";
     }
     @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
     public String deletePostOK(@PathVariable("id") int id){
@@ -50,6 +49,6 @@ public class BoardController {
             System.out.println("데이터 삭제 실패");
         else
             System.out.println("데이터 삭제 성공!!!");
-        return "redirect:/board/posts";
+        return "redirect:/list";
     }
 }
