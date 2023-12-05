@@ -59,6 +59,6 @@
     </c:forEach>
 </table>
 
-<br/><a href="addform">Add New Post</a>
+<br/><a href="add">Add New Post</a>
 </body>
 </html>

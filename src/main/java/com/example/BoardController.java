@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 @Controller
+@RequestMapping(value = "/board")
 public class BoardController {
     @Autowired
     BoardServiceImpl boardService;
@@ -49,6 +50,6 @@ public class BoardController {
             System.out.println("데이터 삭제 실패");
         else
             System.out.println("데이터 삭제 성공!!!");
-        return "redirect:/list";
+        return "redirect:/board/list";
     }
 }
